@@ -8,26 +8,23 @@
     "tweag-jupyter.cachix.org-1:UtNH4Zs6hVUFpFBTLaA4ejYavPo5EFFqgd7G7FxGW9g="
   ];
 
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-  inputs.nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  inputs.nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
   inputs.flake-compat.url = "github:edolstra/flake-compat";
   inputs.flake-compat.flake = false;
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.ihaskell.url = "github:ihaskell/ihaskell";
-  inputs.ihaskell.inputs.nixpkgs.follows = "nixpkgs";
-  inputs.ihaskell.inputs.flake-compat.follows = "";
   inputs.ihaskell.inputs.flake-utils.follows = "flake-utils";
   inputs.nix-dart.url = "github:djacu/nix-dart";
   inputs.nix-dart.inputs.nixpkgs.follows = "nixpkgs";
   inputs.nix-dart.inputs.flake-utils.follows = "flake-utils";
-  inputs.npmlock2nix.url = "github:nix-community/npmlock2nix/0ba0746d62974403daf717cded3f24c617622bc7";
+  inputs.npmlock2nix.url = "github:nix-community/npmlock2nix";
   inputs.npmlock2nix.flake = false;
   inputs.opam-nix.url = "github:tweag/opam-nix";
   inputs.opam-nix.inputs.flake-compat.follows = "";
   inputs.opam-nix.inputs.flake-utils.follows = "flake-utils";
   inputs.opam-nix.inputs.nixpkgs.follows = "nixpkgs";
   inputs.pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
-  inputs.pre-commit-hooks.inputs.flake-utils.follows = "flake-utils";
   inputs.pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
   inputs.pre-commit-hooks.inputs.flake-compat.follows = "";
   # https://github.com/nix-community/poetry2nix/pull/1329
@@ -36,7 +33,6 @@
   inputs.poetry2nix.inputs.nixpkgs.follows = "nixpkgs";
   inputs.poetry2nix.inputs.treefmt-nix.follows = "";
   inputs.rust-overlay.url = "github:oxalica/rust-overlay";
-  inputs.rust-overlay.inputs.flake-utils.follows = "flake-utils";
   inputs.rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs = {
@@ -71,7 +67,7 @@
           poetry2nix.overlays.default
         ];
 
-        python = pkgs.python3;
+        python = pkgs.python312;
 
         baseArgs = {
           inherit self system;

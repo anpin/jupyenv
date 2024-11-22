@@ -36,7 +36,7 @@
       in rec {
         packages = {inherit jupyterlab;};
         packages.default = jupyterlab;
-        apps.default.program = "${jupyterlab}/bin/jupyter-lab";
+        apps.default.program = "${jupyterlab}/bin/jupyter-run";
         apps.default.type = "app";
       }
     );

@@ -35,7 +35,7 @@
           nix
         ];
 
-      env = pkgs.python3.withPackages (ps: with ps; [nix-kernel]);
+      env = pkgs.python312.withPackages (ps: with ps; [nix-kernel]);
 
       wrappedEnv =
         pkgs.runCommand "wrapper-${env.name}"

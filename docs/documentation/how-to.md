@@ -124,7 +124,7 @@ description = ""
 authors = []
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.12"
 numpy = "^1.23.0"
 ipykernel = "^6.15.0"
 

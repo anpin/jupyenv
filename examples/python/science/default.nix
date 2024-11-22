@@ -10,7 +10,7 @@ in {
     runtimePackages = [
       pkgs.coreutils
     ];
-    env = cfg-science-example.nixpkgs.python3.withPackages (ps:
+    env = cfg-science-example.nixpkgs.python312.withPackages (ps:
       with ps; [
         ps.ipykernel
         ps.scipy

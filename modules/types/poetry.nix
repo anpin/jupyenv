@@ -107,7 +107,7 @@ in {
 
   python = lib.mkOption {
     type = types.package;
-    default = config.nixpkgs.python3;
+    default = config.nixpkgs.python312;
     example = "python310";
     description = lib.mdDoc ''
       Name of the python interpreter (from nixpkgs) to be used for this
@@ -204,8 +204,8 @@ in {
       })
       .override (args: {inherit (config) ignoreCollisions;});
 
-    defaultText = lib.literalExpression "pkgs.poetry2nix.mkPoetryEnv or pkgs.python3.buildEnv";
-    example = lib.literalExpression "pkgs.poetry2nix.mkPoetryEnv or pkgs.python3.buildEnv";
+    defaultText = lib.literalExpression "pkgs.poetry2nix.mkPoetryEnv or pkgs.python312.buildEnv";
+    example = lib.literalExpression "pkgs.poetry2nix.mkPoetryEnv or pkgs.python312.buildEnv";
     description = lib.mdDoc ''
       The poetry environment for this ${kernelName} kernel.
     '';
