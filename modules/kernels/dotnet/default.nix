@@ -19,7 +19,6 @@
       };
 
     requiredRuntimePackages = [
-      config.nixpkgs.dotnet-sdk_9
       dotnet-interactive
     ];
     args = {inherit self system lib config name kernelName requiredRuntimePackages;};
@@ -31,7 +30,7 @@
       pkgs ? self.inputs.nixpkgs.legacyPackages.${system},
       name ? "dotnet",
       displayName ? "dotnet",
-      requiredRuntimePackages ? with pkgs; [dotnet-sdk_8 dotnet-interactive],
+      requiredRuntimePackages ? with pkgs; [dotnet-interactive],
       runtimePackages ? [],
       extraKernelSpc,
       language ? "csharp",
