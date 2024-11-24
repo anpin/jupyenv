@@ -20,6 +20,7 @@
 
     requiredRuntimePackages = [
       dotnet-interactive
+      dotnet-interactive.dotnet-sdk
     ];
     args = {inherit self system lib config name kernelName requiredRuntimePackages;};
     kernelModule = import ./../../kernel.nix args;
@@ -30,7 +31,7 @@
       pkgs ? self.inputs.nixpkgs.legacyPackages.${system},
       name ? "dotnet",
       displayName ? "dotnet",
-      requiredRuntimePackages ? with pkgs; [dotnet-interactive],
+      requiredRuntimePackages ? with pkgs; [dotnet-interactive dotnet-interactive.dotnet-sdk],
       runtimePackages ? [],
       extraKernelSpc,
       language ? "csharp",
